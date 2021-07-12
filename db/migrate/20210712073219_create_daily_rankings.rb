@@ -12,4 +12,4 @@ end
 #   def change
 #     add_index :daily_rankings, [:user_id], unique: true
 #   end
-end
+# end
