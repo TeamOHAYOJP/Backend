@@ -38,8 +38,21 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# devise
+
 gem 'devise'
 gem 'devise_token_auth'
-gem 'dotenv-rails'
+
+
+# omniauth
+
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem "omniauth-rails_csrf_protection"
+
+
+#dotenv
+
+gem 'dotenv-rails'
+
