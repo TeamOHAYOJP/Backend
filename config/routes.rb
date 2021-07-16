@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+
       resources :test, only: %i[index]
 
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
@@ -9,8 +10,11 @@ Rails.application.routes.draw do
       }
 
       namespace :auth do
-        resources :sessions, onlt: %i[index]
+        resources :sessions, only: [:index]
       end
+
+      resources :users, only: [:index, :show, :update]
+
     end
   end
 end
