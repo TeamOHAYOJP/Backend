@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "test" => "test#index"
+
   namespace :api do
     namespace :v1 do
 
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
 
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
         registrations: 'api/v1/auth/registrations',
-        # omniauth_callbacks: 'api/v1/auth/omniauth_callbacks'
+        omniauth_callbacks: 'api/v1/auth/omniauth_callbacks'
       }
 
       namespace :auth do
