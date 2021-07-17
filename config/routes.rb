@@ -11,9 +11,11 @@ Rails.application.routes.draw do
       }
 
       namespace :auth do
-        resources :sessions, onlt: %i[index]
+        resources :sessions, only: [:index]
       end
 
+      resources :users, only: [:index, :show, :update]
+      
       delete "/daily_rankings/destroy_all" => "daily_rankings#destroy_all"
       resources :daily_rankings, only: %i[index create]
 
