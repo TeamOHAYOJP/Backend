@@ -7,10 +7,23 @@ class Api::V1::RankingsController < ApplicationController
     def create
         #daily_rankingをsaveする
         #rankingもsaveする
+        @daily_ranking=Ranking.new(params[:user_id])
+        @ranking=Ranking.new(params[:user_id])
 
-        # どちらも成功したらjson
-        # どれかが失敗したら成功したやつを消してjson
-        # どっちも失敗したらjson
+        if @daily_ranking.save && @ranking.save
+            render json: { status: 200, message: "保存し成功しました", daily_ranking: @daily_ranking , ranking: @ranking}
+        elsif !@daily_ranking.save || !@ranking.save 
+            
+            if @daily_ranking.id != nil 
+                @daily_ranking.destroy
+            else
+                @ranking.destroy
+            end
+
+            render json: { status: 500, message: "保存に失敗しました" }
+
+        end
+        
 
     end
     
