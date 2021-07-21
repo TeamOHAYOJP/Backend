@@ -10,7 +10,7 @@ class Api::V1::DailyRankingsController < ApplicationController
     @ranking = Ranking.new(dailiy_rankings_params)
 
     if @daily_ranking.save && @ranking.save
-      render json: { status: 200, message: "保存し成功しました", daily_ranking: @daily_ranking , ranking: @ranking}
+      render json: { status: 200, message: "保存に成功しました", daily_ranking: @daily_ranking , ranking: @ranking}
     else
       render json: { status: 500, message: "保存に失敗しました" }
     end
@@ -27,6 +27,7 @@ class Api::V1::DailyRankingsController < ApplicationController
   def is_ranked_in
     if !current_api_v1_user
       render json: { status: 500, message: "ログインユーザーがいません" } 
+      return
     end
 
     if DailyRanking.where(user_id: current_api_v1_user.id).present?
