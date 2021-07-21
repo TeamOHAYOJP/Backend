@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :update]
       
       delete "/daily_rankings/destroy_all" => "daily_rankings#destroy_all"
+      get "/daily_rankings/is_ranked_in" => "daily_rankings#is_ranked_in"
       resources :daily_rankings, only: %i[index create]
 
     end
