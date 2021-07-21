@@ -9,7 +9,7 @@ class Api::V1::UsersController < ApplicationController
     # end
 
     def show
-        render json: { status: 200 , user: @user }
+        render json: { status: 200 , user: @user , rankings: @user.rankings}
     end
 
     def update

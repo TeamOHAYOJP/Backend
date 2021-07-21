@@ -24,6 +24,16 @@ class Api::V1::DailyRankingsController < ApplicationController
     end
   end
 
+  def is_ranked_in
+    return json:{ status: 500, message: "ログインユーザーがいません" } if !current_api_v1_user
+
+    if DailyRanking.where(user_id: current_api_v1_user.id).present?
+      return json: { status: 200, is_ranked_in: true }
+    else
+      return json: { status: 200, is_ranked_in: false }
+    end
+
+  end
   private
 
   # def dailiy_rankings_params
