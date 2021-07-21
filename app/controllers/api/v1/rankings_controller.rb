@@ -18,3 +18,5 @@ class Api::V1::RankingsController < ApplicationController
         
     # end
 end
+# TODO: whenever
+# TODO: 日本時間

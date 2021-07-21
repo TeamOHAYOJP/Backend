@@ -7,9 +7,10 @@ class Api::V1::DailyRankingsController < ApplicationController
 
   def create
     @daily_ranking = DailyRanking.new(params[:user_id]) 
-    
-    if @daily_ranking.save
-      render json: { status: 200, message: "保存し成功しました", daily_ranking: @daily_ranking }
+    @ranking = Ranking.new(params[:user_id])
+
+    if @daily_ranking.save && @ranking.save
+      render json: { status: 200, message: "保存し成功しました", daily_ranking: @daily_ranking , ranking: @ranking}
     else
       render json: { status: 500, message: "保存に失敗しました" }
     end
