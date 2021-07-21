@@ -8,6 +8,7 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
       - /tmp/dockerdir:/etc/mysql/conf.d/
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - 3306:3306
   api:
