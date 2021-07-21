@@ -13,7 +13,9 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def update
-        if @user.update(users_params)
+        @user.name = user_params[:name]
+
+        if @user.save
             render json: { status: 200, user: @user }
         else
             render json: { status: 500, message: "更新に失敗しました" }
@@ -29,8 +31,6 @@ class Api::V1::UsersController < ApplicationController
     def user_params
         params.permit(
             :name,
-            :nickname,
-            :image,
             :email,
         )
     end
