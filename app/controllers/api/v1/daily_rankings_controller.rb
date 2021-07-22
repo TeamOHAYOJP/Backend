@@ -30,8 +30,10 @@ class Api::V1::DailyRankingsController < ApplicationController
       return
     end
 
-    if DailyRanking.where(user_id: current_api_v1_user.id).present?
-      render json: { status: 200, is_ranked_in: true }
+
+    @rankings = DailyRanking.where(user_id: current_api_v1_user.id)
+    if @rankings.present?
+      render json: { status: 200, is_ranked_in: true, ranking: @rankings[-1] }
     else
       render json: { status: 200, is_ranked_in: false }
     end
