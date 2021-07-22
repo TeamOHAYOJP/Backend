@@ -17,11 +17,15 @@ class Api::V1::DailyRankingsController < ApplicationController
   end
 
   def destroy_all
+    p 'start deleting'
     if DailyRanking.destroy_all
       render json: { status: 200, message: "全削除に成功しました" }
+      p 'succeed'
     else
       render json: { status: 500, message: "全削除に失敗しました" }
+      p 'failed'
     end
+    p 'done deleting'
   end
 
   def is_ranked_in
