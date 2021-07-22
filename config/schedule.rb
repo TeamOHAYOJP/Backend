@@ -8,7 +8,7 @@ job_type :runner,  "cd :path && /usr/local/bundle/bin/rails runner -e :environme
 # cronを実行する環境変数
 rails_env = ENV['RAILS_ENV'] || :development
 # cronを実行する環境変数をセット
-set :environment, :development
+set :environment, rails_env
 # cronのログの吐き出し場所
 set :output, "#{Rails.root}/log/cron.log"
 ENV.each { |k, v| env(k, v) }
