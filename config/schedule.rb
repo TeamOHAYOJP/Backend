@@ -16,7 +16,7 @@ ENV.each { |k, v| env(k, v) }
 # 4:30にDailyRanking全削除
 every 1.day, at: '4:30 am' do
     
-    runner "DailyRanking.destory_all"
+    runner "DailyRanking.destroy_all"
 
 end
 
@@ -30,7 +30,7 @@ end
 every 1.day, at: '8:17 am' do
     
     runner "DailyRanking.create(user_id:2)"
-    command "echo 'wake up bot 4'"
+    command "echo 'wake up bot 2'"
 
 end
 every 1.day, at: '8:49 am' do
