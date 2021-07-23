@@ -18,7 +18,7 @@ end
 
 10.times do |i|
     DailyRanking.create!(
-        user_id: i
+        user_id: i+1
     )
 end
 
