@@ -6,10 +6,3 @@ class CreateDailyRankings < ActiveRecord::Migration[6.1]
     end
   end
 end
-# TODO:デプロイ前に忘れずに追加しておいて
-# 開発中なので後で追記
-# class AddUniqueIndexToDailyRankings < ActiveRecord::Migration[6.1]
-#   def change
-#     add_index :daily_rankings, [:user_id], unique: true
-#   end
-# end
