@@ -1,24 +1,12 @@
-# README
+![sshot](https://user-images.githubusercontent.com/72016706/126886941-7e3c4c7c-e06c-4029-9f95-fd10b1eaba3e.png)
+# OHAYOJP
+OHAYOJPは朝何時に起きたのかをランキング形式でみんなとシェアしたり、毎日自分が何時に起きたのかをグラフで記録したりすることができるアプリケーションです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+http://ohayojp.ml
 
-Things you may want to cover:
+# Bakend repository
+https://github.com/TeamRecursion/Hayaoki-Ranking-Backend
 
-* Ruby version
+# DEMO
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://drive.google.com/file/d/1YTeqS5O0EIzq38Eka8siEFocg4o-10tM/view
